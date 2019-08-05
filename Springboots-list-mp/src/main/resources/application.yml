@@ -1,0 +1,22 @@
+server: 
+   port: 8083
+   servlet: 
+      context-path: /boot-mp
+logging: 
+   path: /user/local/log
+   level: 
+      com.boot.redis.controller: DEBUG   
+
+mybatis-plus:
+   type-aliases-package: com.boot.mp.pojo
+   mapper-locations: classpath:/mapper/*Mapper.xml
+
+# DataSource Config
+spring:
+#    profiles:
+#        active: h2
+    datasource:
+           url: jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT
+           username: root
+           password: 
+           driver-class-name: com.mysql.cj.jdbc.Driver

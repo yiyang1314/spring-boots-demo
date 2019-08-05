@@ -1,0 +1,14 @@
+server: 
+    port: 80
+    context-path: /ssm
+spring:
+    datasource:
+       url: jdbc:mysql://localhost:3306/pyg
+       driver-class-name: com.mysql.jdbc.Driver
+       username: root
+       password: 
+    jpa: 
+      hibernate:
+        ddl-auto: update
+      show-sql: true
+ 
