@@ -5,8 +5,14 @@ bin-release/
 [Bb]in/
 
 # Other files and folders
-.settings/
-
+*/.settings/
+*/.mvn/
+*/target/
+*/hELP.md
+*/.project/
+*/.classpath/
+*/mvnw
+*/mvnw.cmd
 # Executables
 *.swf
 *.air
