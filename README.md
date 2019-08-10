@@ -1,17 +1,21 @@
 # spring-boots-demo
 > 开发一个springboot系列单例
 
-++ spring-boots-demo
+spring-boots-demo  项目demo
 
-|------Springboot-list-jpa
+   |------Springboot-list-jpa   JPA整合案列
 
-|------Springboot-list-mp
+   |------Springboot-list-mp   Mybatis-plus与boot整合
 
-|------Springboot-list-redis
+   |------Springboot-list-redis   redis与boot整合
 
-|------Springboot-list-web
+   |------Springboot-list-web     
 
-|------Springboot
+   |------Springboot
+
+[^注意]:在这里每一个案列都整合了Swagger2都提供了项目API接口文档，其访问地址为：http://ip:port/boot-mp/swagger-ui.html页面，访问其他的demo案列将boot-mp替换成jpa,redis.web,或者修改application.properties/yml属性文件。
+
+
 
 # 整合Swagger 编写API文档
 
@@ -96,11 +100,11 @@ public class UserController {
 
 ![查看API](./images/p11.png)
 
-​							图1 查看API接口文档
+​							                            图1 查看API接口文档
 
 ![查询](./images/p22.png)
 
-​									图2 查询所有用户
+​									          图2 查询所有用户
 
-[^下次更新]: 2019-08-07
+[^上次更新]: 2019-08-07
 
