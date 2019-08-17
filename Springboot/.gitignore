@@ -1,4 +1,16 @@
-HELP.md
+
+target/
+.apt_generated/
+.apt_generated_tests/
+.project/
+.classpath/
+.target/
+.gitignore
+.mvn/
+mvnw
+mvnw.cmd
+.factorypath
+.setting/
 /target/
 !.mvn/wrapper/maven-wrapper.jar
 

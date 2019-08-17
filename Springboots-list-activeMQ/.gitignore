@@ -1,4 +1,16 @@
-# Build and Release Folders
+
+target/
+.apt_generated/
+.apt_generated_tests/
+.project/
+.classpath/
+.target/
+.gitignore
+.mvn/
+mvnw
+mvnw.cmd
+.factorypath
+.setting/
 bin-debug/
 bin-release/
 [Oo]bj/
