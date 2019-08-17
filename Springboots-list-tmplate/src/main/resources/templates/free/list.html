@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		    <meta charset="UTF-8">
+		    <title>Freemaker用户列表</title>
+	</head>
+	<body>
+		<table>
+		<tr>
+			<th>姓名</th>
+			<th>ID</th>
+			<th>年龄</th>
+			<th>工资</th>
+		</tr>
+		<#list list! as user> 
+			<tr>
+				<td >${user.id}</td>
+				<td>${user.name}</td>
+				<td>${user.age}</td>
+				<td>${user.email}</td>
+			</tr>
+		</#list>
+	</table>
+	</body>
+
+</html>

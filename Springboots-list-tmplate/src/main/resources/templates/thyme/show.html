@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		    <meta charset="UTF-8">
+		    <title>用户列表</title>
+	</head>
+	<body>
+		<table>
+		<tr>
+			<th>姓名</th>
+			<th>ID</th>
+			<th>年龄</th>
+			<th>邮箱</th>
+			<th>索引</th>
+		</tr>
+
+			<tr th:each="m,iterStat : ${list}"><!-- 其中m是个临时变量，像for(User u : userList)那样中的u-->
+				<td th:text="${m.name}"/>
+				<td th:text="${m.age}"/>
+				<td th:text="${m.id}"/>
+				<td th:text="${m.email}"/>
+				<td th:text="${iterStat.index}"/>
+			</tr>
+
+
+	</table>
+				<pre>
+			当前迭代索引，从0开始。这是index属性。
+			当前迭代索引，从1开始。这是count属性。
+			迭代变量中的元素总数。这是size财产。
+			每个迭代的iter变量。这是current财产。
+			目前的迭代是偶数还是奇数。这些是even/odd布尔属性。
+			目前的迭代是否是第一个。这是first布尔属性。
+			目前的迭代是否是最后一个。这是last布尔属性。
+			
+
+			</pre>
+	</body>
+</html>

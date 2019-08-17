@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.pollix.at/thymeleaf/shiro">
+	<head>
+		<title>用户主页</title>
+		<meta charset="utf-8">
+
+	</head>
+	<body onload="alert('${success}')}">
+		<h3>hello <shiro:principal /></h3>
+		<h3><a href="/logout">注销登录</a></h3>
+		<h3><a shiro:hasRole="admin" href="/admin">进入管理界面</a></h3>
+		<h3><a shiro:hasAnyRole="admin,user" href="/user">进入用户界面</a></h3>
+	</body>
+</html>

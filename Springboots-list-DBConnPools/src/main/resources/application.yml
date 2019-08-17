@@ -1,0 +1,10 @@
+# mybatis \u914D\u7F6E
+mybatis:
+  typeAliasesPackage: com.boot.pool.pojo
+  mapperLocations: classpath*:mapper/*mapper.xml
+mapper:
+  mappers: com.boot.pool.mapper.UserMapper
+  not-empty: false
+  identity: mysql
+
+

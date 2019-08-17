@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.pollix.at/thymeleaf/shiro">
+	<head>
+		    <meta charset="UTF-8">
+		    <title>用户登录1314</title>
+	</head>
+	<body>
+		<h4 th:text="${error}"></h4>
+		<form action="doLogin" method="post">
+			    <p>账号：<input type="text" name="username" /></p>
+			    <p>密码：<input type="password" name="password" /></p>
+			    <p><input type="submit" value="登录"/></p>
+		</form>
+	</body>
+</html>

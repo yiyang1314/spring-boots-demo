@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		    <meta charset="UTF-8">
+		    <title>用户列表</title>
+	</head>
+	<body>
+		<table>
+		<tr>
+			<th>姓名</th>
+			<th>ID</th>
+			<th>年龄</th>
+			<th>工资</th>
+		</tr>
+		<tr th:each=" user : ${list}" >
+			<td th:text="${user.name}" />
+			<td th:text="${user.id}"/>
+			<td th:text="${user.age}"/>
+			<td th:text="${user.email}"/>
+		</tr>
+	</table>
+	</body>
+	th:action 表单提交的地址 <form action="subscribe.html" th:action="@{/subscribe}">
+	th:each 属性赋值 <tr th:each="user,userStat:${users}">
+	th:field 常用于表单字段绑定 <input type="text" value="" th:field="*{username}"></input>
+	th:href 链接地址 <a th:href="@{/login}" th:unless=${session.user != null}>Login</a> />
+	th:id 替换id <input th:id="'xxx' + ${collect.id}"/>
+	th:if 判断条件 <a th:if="${userId == collect.userId}" >
+	th:include 布局标签,替换内容到引入的文件 <head th:include="layout :: htmlhead" th:with="title='xx'"></head> />
+	th:fragment 布局标签,定义代码片段,其它引用 <div th:fragment="alert">
+	th:object 替换对象 <div th:object="${session.user}">
+	th:src 图片类地址引入 ![](@{/img/logo.png})
+	th:replace 布局标签,替换整个标签到引入的文件 <div th:replace="fragments/header :: title"></div>
+	th:text 文本替换 <p th:text="${collect.description}">description
+	th:value 属性赋值 <input th:value="${user.name}" />
+	th:inline 定义js脚本可以使用变量 <script type="text/javascript" th:inline="javascript">
+	th:remove 删除某个属性 <tr th:remove="all">
+	th:style 设置样式 th:style="'display:' + @{(${sitrue} ? 'none' : 'inline-block')} + ''"
+	th:onclick 点击事件 th:οnclick="'getCollect()'"
+	
+</html>
