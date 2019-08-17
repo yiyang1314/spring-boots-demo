@@ -25,7 +25,7 @@ import com.boot.mp.pojo.User;
 @SpringBootTest
 @EnableAutoConfiguration
 public class MPTest {
-    	@Autowired
+      @Autowired
     private UserMapper userMapper;
     	
     	@Test

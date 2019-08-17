@@ -19,7 +19,7 @@ import java.lang.annotation.Target;
 
 import org.slf4j.LoggerFactory;
 
-import com.boot.mq.activemq.config.JmsConsumer;
+
 
 import net.bytebuddy.asm.Advice.This;
 

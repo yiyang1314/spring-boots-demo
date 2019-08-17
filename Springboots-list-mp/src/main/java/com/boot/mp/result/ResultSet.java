@@ -7,7 +7,7 @@ public class ResultSet {
 
 	public ResultSet() {
 		super();
-		// TODO Auto-generated constructor stub
+
 	}
 	public ResultSet(String message, boolean status) {
 		super();

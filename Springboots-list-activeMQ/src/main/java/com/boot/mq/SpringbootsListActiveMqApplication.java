@@ -6,16 +6,22 @@ import javax.jms.*;
 
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.boot.mq.annotation.Logger;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 @SpringBootApplication
 @Slf4j
-@ComponentScan("com.boot.mq.*")
 public class SpringbootsListActiveMqApplication {
 	
 	public static void main(String[] args) {
@@ -23,6 +29,7 @@ public class SpringbootsListActiveMqApplication {
 		SpringApplication.run(SpringbootsListActiveMqApplication.class, args);
 	}
 
+	
 //	public  void init() throws JMSException {
 //        //前期的初始化工作与生产者相同
 //        ConnectionFactory factory = new ActiveMQConnectionFactory(

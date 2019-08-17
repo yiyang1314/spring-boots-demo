@@ -10,7 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.scheduling.annotation.EnableAsync;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.boot.mq.activemq.config.JmsConsumer;
+
 import com.boot.mq.activemq.config.JmsProducer;
 import com.boot.mq.activemq.config.TopicJmsPDCU;
 
@@ -18,8 +18,7 @@ import com.boot.mq.activemq.config.TopicJmsPDCU;
 @SpringBootTest
 @EnableAsync
 public class ActivemqTest {
-	@Autowired
-	private JmsConsumer jmsConsumer; 
+
 	@Autowired
 	private JmsProducer jmsProducer;
 	

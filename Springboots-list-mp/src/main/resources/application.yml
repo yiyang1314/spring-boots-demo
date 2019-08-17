@@ -13,8 +13,8 @@ mybatis-plus:
 
 # DataSource Config
 spring:
-#    profiles:
-#        active: h2
+    profiles: 
+       active: 
     datasource:
            url: jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=GMT
            username: root

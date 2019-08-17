@@ -16,9 +16,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jms.annotation.JmsListener;
 import org.springframework.jms.core.JmsMessagingTemplate;
 import org.springframework.scheduling.annotation.Async;
-
+import org.springframework.stereotype.Component;
+@Component
 public class TopicJmsPDCU {
-    private Logger logger = LoggerFactory.getLogger(JmsConsumer.class);
+    private Logger logger = LoggerFactory.getLogger(TopicJmsPDCU.class);
     @Autowired
     @Qualifier("firstJmsTemplate")
     private JmsMessagingTemplate jmsTemplate;
