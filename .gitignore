@@ -7,7 +7,21 @@ bin-release/
 # Other files and folders
 */.settings/
 */.mvn/
-*/target/
+
+
+Springboots-list-*/.apt_generated/
+Springboots-list-*/.apt_generated_tests/
+Springboots-list-*/.project/
+Springboots-list-*/.classpath/
+Springboots-list-*/.target/
+Springboots-list-*/.gitignore
+Springboots-list-*/.mvn/
+Springboots-list-*/mvnw
+Springboots-list-*/mvnw.cmd
+Springboots-list-*/.factorypath
+Springboots-list-*/.setting/
+
+
 */Springboots-list-*/.apt_generated/
 */Springboots-list-*/.apt_generated_tests/
 */Springboots-list-*/.project/
@@ -25,6 +39,7 @@ bin-release/
 */.classpath/
 */mvnw
 */mvnw.cmd
+
 # Executables
 *.swf
 *.air
