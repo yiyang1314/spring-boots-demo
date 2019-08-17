@@ -1,35 +1,36 @@
 # spring-boots-demo
 > 开发一个springboot系列单例
 
-spring-boots-demo  项目demo
+>spring-boots-demo  项目demo
+>
+>   |------Springboot
+>
+>   |------Springboot-list-jpa   JPA整合案列
+>
+>   |------Springboot-list-mp   Mybatis-plus与boot整合
+>
+>   |------Springboot-list-redis   redis与boot整合
+>
+>   |------Springboot-list-web     webmvc
+>
+>   |-–-–-–Springboot-list-solr   整合solr库
+>
+>   |-–-–-–Springboot-list-shiro   整合安全框架shiro
+>
+>   |-–-–-–Springboot-list-security   整合安全框架security   
+>
+>   |-–-–-–Springboot-list-tmplate     模板引擎切换
+>
+>   |-–-–-–Springboot-DBConnPools  连接池切换
+>
+>   |-–-–-–Springboot-list-adminServer整合安全框架shiro
+>
+>   |-–-–-–Springboot-list-client整合安全框架security   
+>
+>   |-–-–-–Springboot-list-ActiveMq模板引擎切换
 
-   |------Springboot
 
-   |------Springboot-list-jpa   JPA整合案列
-
-   |------Springboot-list-mp   Mybatis-plus与boot整合
-
-   |------Springboot-list-redis   redis与boot整合
-
-   |------Springboot-list-web     webmvc
-
-   |-–-–-–Springboot-list-solr   整合solr库
-
-   |-–-–-–Springboot-list-shiro   整合安全框架shiro
-
-   |-–-–-–Springboot-list-security   整合安全框架security   
-
-   |-–-–-–Springboot-list-tmplate     模板引擎切换
-
-   |-–-–-–Springboot-DBConnPools  连接池切换
-
-   |-–-–-–Springboot-list-adminServer整合安全框架shiro
-
-   |-–-–-–Springboot-list-client整合安全框架security   
-
-   |-–-–-–Springboot-list-ActiveMq模板引擎切换
-
-
+----------
 
 
 # 整合Swagger 编写API文档

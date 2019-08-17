@@ -1,8 +1,7 @@
 # Build and Release Folders
 bin-debug/
 bin-release/
-[Oo]bj/
-[Bb]in/
+
 
 # Other files and folders
 */.settings/
@@ -21,6 +20,18 @@ Springboots-list-*/mvnw.cmd
 Springboots-list-*/.factorypath
 Springboots-list-*/.setting/
 
+
+*/*/.apt_generated/
+*/*/.apt_generated_tests/
+*/*/.project/
+*/*/.classpath/
+*/*/.target/
+*/*/.gitignore
+*/*/.mvn/
+*/*/mvnw
+*/*/mvnw.cmd
+*/*/.factorypath
+*/*/.setting/
 
 */Springboots-list-*/.apt_generated/
 */Springboots-list-*/.apt_generated_tests/
@@ -50,6 +61,4 @@ Springboots-list-*/.setting/
 *.jar
 *.war
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+
