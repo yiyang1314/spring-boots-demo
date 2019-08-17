@@ -3,17 +3,32 @@
 
 spring-boots-demo  项目demo
 
+   |------Springboot
+
    |------Springboot-list-jpa   JPA整合案列
 
    |------Springboot-list-mp   Mybatis-plus与boot整合
 
    |------Springboot-list-redis   redis与boot整合
 
-   |------Springboot-list-web     
+   |------Springboot-list-web     webmvc
 
-   |------Springboot
+   |-–-–-–Springboot-list-solr   整合solr库
 
-[^注意]:在这里每一个案列都整合了Swagger2都提供了项目API接口文档，其访问地址为：http://ip:port/boot-mp/swagger-ui.html页面，访问其他的demo案列将boot-mp替换成jpa,redis.web,或者修改application.properties/yml属性文件。
+   |-–-–-–Springboot-list-shiro   整合安全框架shiro
+
+   |-–-–-–Springboot-list-security   整合安全框架security   
+
+   |-–-–-–Springboot-list-tmplate     模板引擎切换
+
+   |-–-–-–Springboot-DBConnPools  连接池切换
+
+   |-–-–-–Springboot-list-adminServer整合安全框架shiro
+
+   |-–-–-–Springboot-list-client整合安全框架security   
+
+   |-–-–-–Springboot-list-ActiveMq模板引擎切换
+
 
 
 
@@ -106,5 +121,10 @@ public class UserController {
 
 ​									          图2 查询所有用户
 
-[^上次更新]: 2019-08-07
+[^注意]:在这里每一个案列都整合了Swagger2都提供了项目API接口文档，其访问地址为：http://ip:port/boot-mp/swagger-ui.html页面，访问其他的demo案列将boot-mp替换成jpa,redis.web,或者修改application.properties/yml属性文件。
+
+[^注意2]:以上每一个案列都提供了参考博文共大家学习，我也只是参考其他博主的。
+
+
+[^上次更新]: 2019-08-016
 
