@@ -70,30 +70,27 @@ public class  WebMvcConfiguration  extends WebMvcConfigurerAdapter{
 
 
 
+2.启动主类中添加以下注解用于开启CAS单点登录:
 
-2.启动主类中添加以下注解用于开启CAS单点登录:@EnableCasClient
 
+```java
+
+@EnableCasClient
 package com.qf.swar;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import net.unicon.cas.client.configuration.EnableCasClient;
-
 @SpringBootApplication
 @EnableCasClient
 @Controller
 public class DemoApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
-	}
-
-
-​	
+    public static void main(String[] args) {
+            SpringApplication.run(DemoApplication.class, args);
+    }
 
 	@RequestMapping("/hello")
 	@ResponseBody
@@ -108,14 +105,16 @@ public class DemoApplication {
 	}
 
 
-​	
+	
 	@RequestMapping(value="/login")
 	public String requestMethodName() {
 			return "s/index";
 	}
 }
-3.application.properties配置文件中添加以下:
+```
 
+3.application.properties配置文件中添加以下:
+```properties
 server.port=8083
 
 cas.validation-type=CAS
@@ -126,8 +125,10 @@ cas.client-host-url=http://localhost:8083/login
 ###指定需要经过CAS验证的链接,未指定的不需要配置
 
 cas.authentication-url-patterns=/login/*,/api/*
-4.index.html
+```
 
+4.index.html
+```html
 <!DOCTYPE html>
 <html lang="zh">
 <head>
@@ -137,13 +138,9 @@ cas.authentication-url-patterns=/login/*,/api/*
 <body>
      <h1>Hello, world!</h1>
      <form action="/hello"  method="post">
-
-
-
-​     
-     <button type="submit">提价Form</button>
-     </form>
-     
+    <button type="submit">提价Form</button>
+    </form>
+   
      <button onclick="cc();">点击</button>
 </body>
 	<script type="text/javascript">
@@ -160,16 +157,18 @@ cas.authentication-url-patterns=/login/*,/api/*
 				fail:function(){
 				//code here...
 				}
-				});
+            });
 		}
 	
 	</script>
 </html>
+```
 5.运行效果如下:
 
 输入以下地址直接跳转到登陆页面:
 
-http://localhost:8083/login
- ———————————————— 
-版权声明：本文为CSDN博主「果壳中de宇宙」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。
-原文链接：https://blog.csdn.net/guokezhongdeyuzhou/article/details/86611994
+**http://localhost:8083/login**
+-------------
+[^版权声明]:本文为CSDN博主「果壳中de宇宙」的原创文章，遵循CC 4.0 by-sa版权协议，转载请附上原文出处链接及本声明。
+>原文链接：https://blog.csdn.net/guokezhongdeyuzhou/article/details/86611994
+

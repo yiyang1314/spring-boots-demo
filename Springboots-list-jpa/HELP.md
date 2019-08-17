@@ -161,14 +161,15 @@ public StockDetails save(StockDetails o) {
 
 Query接口的主要方法：
 
-int executeUpdate() 用于执行update或delete语句。
-List getResultList() 用于执行select语句并返回结果集实体列表。
-Object getSingleResult() 用于执行只返回单个结果实体的select语句。
-Query setFirstResult(int startPosition) 用于设置从哪个实体记录开始返回查询结果。
-Query setMaxResults(int maxResult)  用于设置返回结果实体的最大数。与setFirstResult结合使用可实现分页查询。
-setHint(String hintName, Object value)  设置与查询对象相关的特定供应商参数或提示信息。参数名及其取值需要参考特定 JPA 实现库提供商的文档。如果第二个参数无效将抛出IllegalArgumentException异常。
-setParameter(int position, Object value)  为查询语句的指定位置参数赋值。Position 指定参数序号，value 为赋给参数的值。
-setParameter(String name, Object value)  为查询语句的指定名称参数赋值。
+> int executeUpdate() 用于执行update或delete语句。
+> List getResultList() 用于执行select语句并返回结果集实体列表。
+> Object getSingleResult() 用于执行只返回单个结果实体的select语句。
+> Query setFirstResult(int startPosition) 用于设置从哪个实体记录开始返回查询结果。
+> Query setMaxResults(int maxResult)  用于设置返回结果实体的最大数。与setFirstResult结合使用可实现分页查询。
+> setHint(String hintName, Object value)  设置与查询对象相关的特定供应商参数或提示信息。参数名及其取值需要参考特定 JPA 实现库提供商的文档。如果第二个参数无效将抛出IllegalArgumentException异常。
+> setParameter(int position, Object value)  为查询语句的指定位置参数赋值。Position 指定参数序号，value 为赋给参数的值。
+> setParameter(String name, Object value)  为查询语句的指定名称参数赋值。
+
 ```
 #复制代码
         @Test
@@ -238,7 +239,7 @@ Long max = (Long)result;
 关联查询#
 JPQL 也支持和 SQL 中类似的关联语法。如： left out join fetch，  right out join fetch  。eft out join，如left out join fetch是以符合条件的表达式的左侧为主。
 ```java
-#复制代码
+
         /**
          * JPQL 的关联查询(left outer join fetch)同 HQL 的关联查询. 
          */
@@ -248,7 +249,7 @@ JPQL 也支持和 SQL 中类似的关联语法。如： left out join fetch，  
             List<User> list = entityManager.createQuery(jpql).setParameter(1, 16).getResultList();
             System.out.println(list.get(0).getOrders());
         }
-复制代码
+
 ```
 
 左外的右边使用的是User类中的orders属性表示另一张表，而且要加上fetch语句，才是一个真正左外连接，要不会报sql异常
@@ -256,7 +257,7 @@ JPQL 也支持和 SQL 中类似的关联语法。如： left out join fetch，  
 子查询#
 JPQL也支持子查询，在 where 或 having 子句中可以包含另一个查询。当子查询返回多于 1 个结果集时，它常出现在 any、all、exists表达式中用于集合匹配查询。它们的用法与SQL语句基本相同。
 ```java
-复制代码
+
         /**
          * JPQL子查询
          */
@@ -267,7 +268,7 @@ JPQL也支持子查询，在 where 或 having 子句中可以包含另一个查�
             List list = entityManager.createQuery(jpql).setParameter(1, "赵六").getResultList();
             System.out.println(list);
         }
-复制代码
+
 ```
 
 #JPQL函数
@@ -283,7 +284,7 @@ locate(String s1, String s2[, int start])：从第一个字符串中查找第二
 --------------------------
 
 ```java
-复制代码
+
         //使用 jpql 内建的函数
         @Test
         public void testJpqlFunction(){
@@ -291,7 +292,7 @@ locate(String s1, String s2[, int start])：从第一个字符串中查找第二
             List list = entityManager.createQuery(jpql).getResultList();
             System.out.println(list);
         }
-复制代码
+
 ```
 算术函数主要有 abs、mod、sqrt、size 等。Size 用于求集合的元素个数。
 
@@ -302,7 +303,7 @@ locate(String s1, String s2[, int start])：从第一个字符串中查找第二
 
 需要在需要查询缓存的时候使用：   query.setHint(QueryHints.HINT_CACHEABLE, true);
 ```java
-复制代码
+
         //使用 hibernate 的查询缓存.(query接口查询(hql)的结果不会放到缓存中,需要配置查询缓存) 
         @Test
         public void testQueryCache(){
@@ -324,13 +325,13 @@ locate(String s1, String s2[, int start])：从第一个字符串中查找第二
             System.out.println(list.size());
             
         }
-复制代码
+
 ```
 整合Spring#
 Spring整合JPA之后，就不需要persistence.xml文件了，需要在applicationContext.xml文件中配置EntityManagerFactory和JPA的事务：
 
 ```xml
-复制代码
+
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -389,8 +390,8 @@ Spring整合JPA之后，就不需要persistence.xml文件了，需要在applicat
     <context:component-scan base-package="cn.lynu"></context:component-scan>
 
 </beans>
-复制代码
- ```
+
+```
 
 作者：OverZeal
 

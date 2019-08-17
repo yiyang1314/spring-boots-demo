@@ -66,7 +66,8 @@ image.png
 
 ### 集成Security
 
-- **1.引入maven依赖**
+- > ### **1.引入maven依赖**
+  
   我们会用到视图层解析，这里用Thymeleaf去解析。
 
 ```
@@ -86,8 +87,8 @@ image.png
         </dependency>
 ```
 
-- **2.配置.properties文件**
-  你也可以将 security.basic.enabled=true 打开，会有基础登录弹窗弹出。这里我们暂时不需要，所以将它关闭，之后我们自己实现登录界面。
+- > **2.配置.properties文件**
+  > 你也可以将 security.basic.enabled=true 打开，会有基础登录弹窗弹出。这里我们暂时不需要，所以将它关闭，之后我们自己实现登录界面。
 
 ```
 #Security
@@ -106,33 +107,33 @@ spring.thymeleaf.content-type=text/html
 spring.thymeleaf.mode=HTML5
 ```
 
-- **3.创建权限管理相关类**
+- > **3.创建权限管理相关类**
 
 ------
 
 以下创建的几个类包括：
 
-**CustomUserServiceImpl类**
-实现了UserDetailsService接口，这个接口很简单就一个方法
-UserDetails loadUserByUsername(String var1)
-会返回一个用户基本信息和该用户拥有的权限功能 （by username），作为后续权限认证的依据，也是和Dao层通信的主要接口。
+> **CustomUserServiceImpl类**
+> 实现了UserDetailsService接口，这个接口很简单就一个方法
+> UserDetails loadUserByUsername(String var1)
+> 会返回一个用户基本信息和该用户拥有的权限功能 （by username），作为后续权限认证的依据，也是和Dao层通信的主要接口。
 
-**MyInvocationSecurityMetadataSourceService类**
-实现了FilterInvocationSecurityMetadataSource接口，类似Holder主要实现加载缓存权限功能路径和名称，以及提供从请求路径查找权限名称，供后续权限决策管理器去判定使用。
+> **MyInvocationSecurityMetadataSourceService类**
+> 实现了FilterInvocationSecurityMetadataSource接口，类似Holder主要实现加载缓存权限功能路径和名称，以及提供从请求路径查找权限名称，供后续权限决策管理器去判定使用。
 
-**MyAccessDecisionManager类**
-实现了AccessDecisionManager接口，主要判定用户是否拥有权限的决策方法，有权限放行，无权限拒绝访问。
+> **MyAccessDecisionManager类**
+> 实现了AccessDecisionManager接口，主要判定用户是否拥有权限的决策方法，有权限放行，无权限拒绝访问。
 
-**MyFilterSecurityInterceptor类**
-继承AbstractSecurityInterceptor抽象类，权限管理Security真正的拦截器，并绑定了MyAccessDecisionManager（处理权限认证）和MyInvocationSecurityMetadataSourceService（提供请求路径和权限名称元数据）
+> **MyFilterSecurityInterceptor类**
+> 继承AbstractSecurityInterceptor抽象类，权限管理Security真正的拦截器，并绑定了MyAccessDecisionManager（处理权限认证）和MyInvocationSecurityMetadataSourceService（提供请求路径和权限名称元数据）
 
-**WebSecurityConfig类**
-继承WebSecurityConfigurerAdapter抽象类，主要是最后配置Security，配置之前定义的拦截器、提供用户基本权限信息、以及一些访问控制。
+> **WebSecurityConfig类**
+> 继承WebSecurityConfigurerAdapter抽象类，主要是最后配置Security，配置之前定义的拦截器、提供用户基本权限信息、以及一些访问控制。
 
 ------
 
-代码示例：
-**CustomUserServiceImpl**
+> 代码示例：
+> **CustomUserServiceImpl**
 
 ```
 import com.yu.scloud.baseframe.frame.dao.SysPermissionMapper;
@@ -183,7 +184,7 @@ public class CustomUserServiceImpl implements UserDetailsService { //自定义Us
 }
 ```
 
-**MyInvocationSecurityMetadataSourceService**
+> **MyInvocationSecurityMetadataSourceService**
 
 ```
 import com.yu.scloud.baseframe.frame.dao.SysPermissionMapper;
@@ -259,7 +260,7 @@ public class MyInvocationSecurityMetadataSourceService  implements
 }
 ```
 
-**MyAccessDecisionManager**
+> **MyAccessDecisionManager**
 
 ```
 import org.springframework.security.access.AccessDecisionManager;
@@ -313,7 +314,7 @@ public class MyAccessDecisionManager implements AccessDecisionManager {
 }
 ```
 
-**MyFilterSecurityInterceptor**
+> **MyFilterSecurityInterceptor**
 
 ```
 import javax.servlet.Filter;
@@ -389,7 +390,7 @@ public class MyFilterSecurityInterceptor extends AbstractSecurityInterceptor imp
 }
 ```
 
-**WebSecurityConfig**
+> **WebSecurityConfig**
 
 ```
 import com.yu.scloud.baseframe.frame.service.impl.CustomUserServiceImpl;
@@ -452,8 +453,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 }
 ```
 
-- **4.创建MyBatis方式，相关实体类、Dao、Service以及Controller**
-  实体类以及部分Dao我就不贴出来了，查看最前面的数据库表字段就可以。或者使用MyBatis自动代码生成器生成，快捷方便，如果还没掌握它怎么使用，请看我的一篇文章[《MyBatis代码自动生成器》](https://www.jianshu.com/p/2ad2dda63756)
+- > **4.创建MyBatis方式，相关实体类、Dao、Service以及Controller**
+  > 实体类以及部分Dao我就不贴出来了，查看最前面的数据库表字段就可以。或者使用MyBatis自动代码生成器生成，快捷方便，如果还没掌握它怎么使用，请看我的一篇文章[《MyBatis代码自动生成器》](https://www.jianshu.com/p/2ad2dda63756)
 
 ------
 

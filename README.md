@@ -1,4 +1,5 @@
 # spring-boots-demo
+
 > 开发一个springboot系列单例
 
 >spring-boots-demo  项目demo
@@ -28,7 +29,6 @@
 >   |-–-–-–Springboot-list-client整合安全框架security   
 >
 >   |-–-–-–Springboot-list-ActiveMq模板引擎切换
-
 
 ----------
 
